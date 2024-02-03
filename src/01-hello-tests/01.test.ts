@@ -1,11 +1,16 @@
 import {mult, splitIntoWords, sum} from "./01";
+//не задаем конкретных значений, так как они могут быть случайно перезаписаны тестами
+let a:number;
+let b:number;
+let c:number;
+
+beforeEach(() => {
+    a = 1;
+    b = 2;
+    c = 3;
+})
 
 test("sum should be correct", () => {
-    //data
-    let a = 1;
-    let b = 2;
-    let c = 3;
-
     //action
     let result1 = sum(a, b);
     let result2 = sum(b, c);
@@ -17,11 +22,6 @@ test("sum should be correct", () => {
 })
 
 test("multiply should be correct", () => {
-    //data
-    let a = 1;
-    let b = 2;
-    let c = 3;
-
     //action
     let result1 = mult(a, b);
     let result2 = mult(b, c);
