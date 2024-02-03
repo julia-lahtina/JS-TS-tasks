@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {splitIntoWords} from "./01-hello-tests/01";
+import {sum} from "./03/03";
+
+let a = sum;
 
 const sentence = "Hello my friends!";
 const result = splitIntoWords(sentence)
