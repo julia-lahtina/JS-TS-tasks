@@ -9,10 +9,10 @@ type StudentType = {
 
 type AdsressType = {
     streetTitle: string
-    city: CityType
+    city: LocalCityType
 }
 
-type CityType = {
+type LocalCityType = {
     title: string
     country: string
 }
