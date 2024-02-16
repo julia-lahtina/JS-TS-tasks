@@ -13,10 +13,14 @@ export const User = () => {
         alert("user has been deleted")
     }
 
+    const saveUser = () => {
+        alert("user has been saved")
+    }
+
     return (
         <div>Dimych
-            <button onClick={() => {deleteUser()}}>delete</button>
-            <button onClick={() => {}}>save
+            <button onClick={deleteUser}>delete</button>
+            <button onClick={saveUser}>save
             </button>
         </div>
     )
