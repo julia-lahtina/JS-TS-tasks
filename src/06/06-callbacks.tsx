@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent, MouseEvent} from 'react';
 
 const collback = (): number => {
     alert('hey');
@@ -9,8 +9,8 @@ const collback = (): number => {
 
 export const User = () => {
 
-    const deleteUser = () => {
-        alert("user has been deleted")
+    const deleteUser = (event: MouseEvent<HTMLButtonElement>) => {
+        alert(event.currentTarget.name)
     }
 
     const saveUser = () => {
@@ -19,6 +19,9 @@ export const User = () => {
     const onNameChanged = () => {
         console.log('name changed')
     }
+    const onAgeChanged = (event: ChangeEvent<HTMLInputElement>) => {
+        console.log('age changed' + event.currentTarget.value)
+    }
     const focusLostHandler = () => {
         console.log('focus lost')
     }
@@ -26,9 +29,9 @@ export const User = () => {
     return (
         <div>
             <textarea onChange={onNameChanged} onBlur={focusLostHandler}>Dimych</textarea>
-            <button onClick={deleteUser}>delete</button>
-            <button onClick={saveUser}>save
-            </button>
+            <button name={'delete'} onClick={deleteUser}>x</button>
+            <button name={'save'} onClick={deleteUser}>x</button>
+            <input onChange={onAgeChanged} type={'number'}/>
         </div>
     )
 }
